@@ -3,5 +3,5 @@ from dataclasses import dataclass
 
 @dataclass (init=False, repr=True, eq=True)
 class Universidad:
-    nombre : str
+    universidad : str
     sigla : str

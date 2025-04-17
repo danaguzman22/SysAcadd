@@ -18,7 +18,7 @@ class FacultadTestCase(unittest.TestCase):
     def test_facultad_creation(self):
         facultad=Facultad()
         facultad.nombre = "Facultad de Ciencias Exactas"
-        facultad.abreviatura = "FCE"
+        facultad.nombre_universidad = "Universidad Nacional de La Plata"
         facultad.directorio = "Ciencias Exactas"
         facultad.sigla = "FCE"
         facultad.codigoPostal = "12345"
@@ -29,7 +29,8 @@ class FacultadTestCase(unittest.TestCase):
         facultad.email ="abc@gmail.com"
         self.assertIsNotNone(facultad)
         self.assertEqual(facultad.nombre, "Facultad de Ciencias Exactas")
-        self.assertEqual(facultad.abreviatura, "FCE")
+        self.assertEqual(facultad.nombre_universidad, "Universidad Nacional de La Plata")
+        self.assertEqual(facultad.sigla, "FCE")
 
 if __name__ == '__main__':
     unittest.main()
