@@ -1,0 +1,64 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table universidad {
+  id int [pk, increment]
+  nombre_universidad varchar
+  sigla varchar
+}
+
+Table facultad {
+  id int [pk, increment]
+  nombre varchar
+  abreviatura varchar
+  directorio varchar
+  codigoPostal varchar
+  ciudad varchar
+  domicilio varchar
+  telefono varchar
+  contacto varchar
+  email varchar
+  universidad_id int [ref: > universidad.id]
+}
+
+Table autoridad {
+  id int [pk, increment]
+  nombre varchar
+  telefono varchar
+  email varchar
+  facultad_id int [ref: > facultad.id]
+}
+
+Table cargo {
+  id int [pk, increment]
+  nombre varchar
+  puntos varchar
+  categoria_id int [ref: > categoria.id, unique] // 1:1
+  tipo_dedicacion_id int [ref: > tipo_dedicacion.id, unique] // 1:1
+}
+
+Table categoria {
+  id int [pk, increment]
+  nombre varchar
+  puntos varchar
+}
+
+Table tipo_dedicacion {
+  id int [pk, increment]
+  nombre varchar
+  observaciones varchar
+}
+
+// Relación muchos a muchos entre autoridad y cargo
+Table autoridad_cargo {
+  autoridad_id int [ref: > autoridad.id]
+  cargo_id int [ref: > cargo.id]
+  indexes {
+    (autoridad_id, cargo_id) [pk]
+    }
+}
+
+
+
+Ref: "categoria"."id" < "categoria"."nombre"
+Ref: "categoria"."id" < "tipo_dedicacion"."id"

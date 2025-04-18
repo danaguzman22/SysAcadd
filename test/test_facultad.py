@@ -17,20 +17,21 @@ class FacultadTestCase(unittest.TestCase):
 
     def test_facultad_creation(self):
         facultad=Facultad()
-        facultad.nombre = "Facultad de Ciencias Exactas"
-        facultad.nombre_universidad = "Universidad Nacional de La Plata"
+        facultad.nombre = "Facultad Regional San Rafael"
+        facultad.nombre_universidad = "Universidad Tecnológica Nacional"
         facultad.directorio = "Ciencias Exactas"
-        facultad.sigla = "FCE"
+        facultad.sigla = "UTN"
+        facultad.abreviatura = "FRSR"
         facultad.codigoPostal = "12345"
-        facultad.ciudad = "La Plata"
-        facultad.domicilio = "Calle 123"
+        facultad.ciudad = "San Rafael"
+        facultad.domicilio = "Urquiza 123"
         facultad.telefono = "123456789"
         facultad.contacto = "Juan Perez"
         facultad.email ="abc@gmail.com"
         self.assertIsNotNone(facultad)
-        self.assertEqual(facultad.nombre, "Facultad de Ciencias Exactas")
-        self.assertEqual(facultad.nombre_universidad, "Universidad Nacional de La Plata")
-        self.assertEqual(facultad.sigla, "FCE")
+        self.assertEqual(facultad.nombre, "Facultad Regional San Rafael")
+        self.assertEqual(facultad.nombre_universidad, "Universidad Tecnológica Nacional")
+        self.assertEqual(facultad.sigla, "UTN")
 
 if __name__ == '__main__':
     unittest.main()
