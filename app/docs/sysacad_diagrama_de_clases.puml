@@ -1,3 +1,4 @@
+
 @startuml Diagrama de Clases de sysacad
 package "Sistema Académico"{
     package "Personas"{
@@ -83,7 +84,6 @@ package "Sistema Académico"{
     class Cargo {
         - nombre: str
         - puntos: int
-        
     }
     
     class CategoriaCargo {
@@ -106,13 +106,13 @@ package "Sistema Académico"{
     }
 
 
-    Orientacion -- Especialidad
-    Orientacion -- Plan
-    Orientacion -- Materia
-    Especialidad -- TipoEspecialidad
-    Facultad <-- Autoridad
+    Orientacion "1" -- "*" Especialidad : contiene
+    Orientacion "1" -- "*" Materia : contiene
+    Especialidad "*" --> "1" TipoEspecialidad : pertenece a
+    Facultad "1" -- "*" Autoridad : tiene
     Facultad -- Universidad
     Cargo -- CategoriaCargo
     Cargo -- TipoDedicacion
+    Orientacion "1" -- "1" Plan : pertenece a
 }
 @enduml
