@@ -1,7 +1,7 @@
 import unittest
 from flask import current_app
 from app import create_app
-from app.models import Facultad
+from app.models import Facultad, Universidad
 import os
 
 class FacultadTestCase(unittest.TestCase):
@@ -17,10 +17,11 @@ class FacultadTestCase(unittest.TestCase):
 
     def test_facultad_creation(self):
         facultad=Facultad()
+        facultad.universidad=Universidad()
         facultad.nombre = "Facultad Regional San Rafael"
-        facultad.nombre_universidad = "Universidad Tecnológica Nacional"
+        facultad.universidad.nombre = "Universidad Tecnológica Nacional"
         facultad.directorio = "Ciencias Exactas"
-        facultad.sigla = "UTN"
+        facultad.universidad.sigla = "UTN"
         facultad.abreviatura = "FRSR"
         facultad.codigoPostal = "12345"
         facultad.ciudad = "San Rafael"
@@ -30,8 +31,8 @@ class FacultadTestCase(unittest.TestCase):
         facultad.email ="abc@gmail.com"
         self.assertIsNotNone(facultad)
         self.assertEqual(facultad.nombre, "Facultad Regional San Rafael")
-        self.assertEqual(facultad.nombre_universidad, "Universidad Tecnológica Nacional")
-        self.assertEqual(facultad.sigla, "UTN")
+        self.assertEqual(facultad.universidad.nombre, "Universidad Tecnológica Nacional")
+        self.assertEqual(facultad.universidad.sigla, "UTN")
 
 if __name__ == '__main__':
     unittest.main()

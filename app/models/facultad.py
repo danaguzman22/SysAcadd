@@ -2,7 +2,8 @@ from dataclasses import dataclass
 from .universidad import Universidad
 
 @dataclass(init=False, repr=True, eq=True)
-class Facultad(Universidad):
+class Facultad():
+    universidad : Universidad
     nombre : str
     abreviatura : str
     directorio : str

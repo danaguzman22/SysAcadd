@@ -114,5 +114,6 @@ package "Sistema Académico"{
     Cargo -- CategoriaCargo
     Cargo -- TipoDedicacion
     Orientacion "1" -- "1" Plan : pertenece a
+    Autoridad *--* Cargo : ocupa
 }
 @enduml

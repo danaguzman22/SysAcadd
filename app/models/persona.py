@@ -6,11 +6,10 @@ class TipoDocumento():
 
 @dataclass(init=False, repr=True, eq=True)    
 class Persona():
-        t_Documento = TipoDocumento()
         apellido : str
         nombre : str
         nroDocumento : str
-        tipoDocumento = t_Documento
+        tipoDocumento : TipoDocumento
         fechaNacimiento : str
         sexo : str
 

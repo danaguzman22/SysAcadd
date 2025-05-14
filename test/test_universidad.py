@@ -16,12 +16,12 @@ class UniversidadTestCase(unittest.TestCase):
         self.app_context.pop()
 
     def test_universidad_creation(self):
-        universidad_ = Universidad()
-        universidad_.nombre_universidad = "Universidad Nacional de La Plata"
-        universidad_.sigla = "UNLP"
-        self.assertIsNotNone(universidad_)
-        self.assertEqual(universidad_.nombre_universidad, "Universidad Nacional de La Plata")
-        self.assertEqual(universidad_.sigla, "UNLP")
+        universidad= Universidad()
+        universidad.nombre = "Universidad Nacional de La Plata"
+        universidad.sigla = "UNLP"
+        self.assertIsNotNone(universidad)
+        self.assertEqual(universidad.nombre, "Universidad Nacional de La Plata")
+        self.assertEqual(universidad.sigla, "UNLP")
 
 if __name__ == '__main__':
     unittest.main()
