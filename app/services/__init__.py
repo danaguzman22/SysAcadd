@@ -1,0 +1,2 @@
+from .facultad_services import  FacultadService
+from .universidad_services import UniversidadService
